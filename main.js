@@ -7,11 +7,13 @@ function createWindow () {
         height: 600,
         webPreferences: {
             nodeIntegration: true
-        }
+        },
+        transparent: true,
     })
 
     // 加载index.html文件
-    win.loadFile('index.html')
+    const promise = win.loadFile('index.html');
+    win.setAlwaysOnTop(true);
 }
 
-app.on('ready', createWindow)
+app.on('ready', createWindow);
